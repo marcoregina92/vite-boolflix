@@ -52,7 +52,9 @@ export default {
   <h1>BoolFlix</h1>
 
   <AppMovie @search="getMovies" />
-  <AppCard v-for="movie in store.movies" :movie="movie" />
+  <div class="d-flex flex-wrap container-fluid">
+    <AppCard v-for="movie in store.movies" :movie="movie" />
+  </div>
 </template>
 
 
