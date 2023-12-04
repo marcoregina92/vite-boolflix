@@ -2,17 +2,23 @@
 
 export default {
     name: "AppCard",
+    props: {
+        movie: Object
+    },
 
     methods: {
 
     },
 
     mounted() {
-        console.log("test");
     }
 }
 </script>
 
-<template></template>
+<template>
+    <h3>Titolo: {{ movie.title }}</h3>
+    <h5>Titolo originale:{{ movie.original_title }}</h5>
+    <h5>Lingua:</h5>
+</template>
 
 <style scoped></style>

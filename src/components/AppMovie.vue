@@ -2,6 +2,7 @@
 import { store } from "../store.js"
 
 export default {
+    name: "AppMovie",
     data() {
         return {
             store
@@ -9,15 +10,22 @@ export default {
     },
 
     methods: {
+        searchMovie() {
+            this.$emit("search");
+        }
 
     },
 
     mounted() {
-        console.log("test");
     }
 }
 </script>
 
-<template></template>
+<template>
+    <div>
+        <input type="text" v-model="store.getInput">
+        <button @click="searchMovie">Cerca</button>
+    </div>
+</template>
 
 <style scoped></style>
