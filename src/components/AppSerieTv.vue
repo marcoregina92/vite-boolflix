@@ -24,12 +24,13 @@ export default {
     <div class="singleCard">
 
         <!-- <h3>Titolo: {{ tv.name }}</h3>
-                <h5>Titolo originale:{{ tv.original_name }}</h5>
-                <img v-if="store.flag.includes(tv.original_language)" :src="'/' + tv.original_language + '.png'" class="flag"
-                    alt="">
-                <h5 v-else> {{ tv.original_language }}</h5>
-                <h5>Voto: {{ tv.vote_average }}</h5> -->
-        <img :src="this.store.poster + tv.poster_path" alt="">
+            <h5>Titolo originale:{{ tv.original_name }}</h5>
+            <img v-if="store.flag.includes(tv.original_language)" :src="'/' + tv.original_language + '.png'" class="flag"
+                alt="">
+            <h5 v-else> {{ tv.original_language }}</h5>
+            <h5>Voto: {{ tv.vote_average }}</h5> -->
+        <img v-if="tv.poster_path" :src="this.store.poster + tv.poster_path" alt="">
+        <h3 v-else class="text-center d-flex"> NESSUNA IMMAGINE</h3>
 
 
     </div>
