@@ -19,7 +19,8 @@ export default {
     <div class="singleCard">
         <h3>Titolo: {{ movie.title }}</h3>
         <h5>Titolo originale:{{ movie.original_title }}</h5>
-        <h5>Lingua:</h5>
+        <h5>Lingua:{{ movie.original_language }}</h5>
+        <img class="flag" :src="'/' + movie.original_language + '.png'">
         <h5>Voto: {{ movie.vote_average }}</h5>
     </div>
 </template>
@@ -32,5 +33,9 @@ export default {
     margin: 10px;
     padding: 10px;
 
+}
+
+.flag {
+    width: 25px;
 }
 </style>
