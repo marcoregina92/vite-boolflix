@@ -25,13 +25,15 @@ export default {
 
 <template>
     <div class="singleCard">
-        <img :src="this.store.poster + movie.poster_path" alt="">
-        <!-- <h3>Titolo: {{ movie.title }}</h3>
+        <!-- <img v-if="movie.poster_path" :src="this.store.poster + movie.poster_path" alt="">
+                <h3 v-else class="text-center"> NESSUNA IMMAGINE DISPONIBILE</h3> -->
+
+        <h3>Titolo: {{ movie.title }}</h3>
         <h5>Titolo originale:{{ movie.original_title }}</h5>
-         <img v-if="store.flag.includes(movie.original_language)" :src="'/' + movie.original_language + '.png'" class="flag"
-         alt="">
-         <h5 v-else> {{ this.movie.original_language }} </h5>
-         <h5>Voto: {{ this.movie.vote_average }}</h5> -->
+        <img v-if="store.flag.includes(movie.original_language)" :src="'/' + movie.original_language + '.png'" class="flag"
+            alt="">
+        <h5 v-else> {{ this.movie.original_language }} </h5>
+        <h5>Voto: {{ this.movie.vote_average }}</h5>
     </div>
 </template>
 
@@ -44,6 +46,7 @@ export default {
 
 .flag {
     width: 30px;
+    height: 20px;
 }
 
 img {
