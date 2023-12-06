@@ -25,13 +25,13 @@ export default {
 
       const options = {
         method: 'GET',
-        url: "https://api.themoviedb.org/3/search/movie?api_key=896cd3d890a13f2d39cda4cdd29b4ee1&query=",
+        url: this.store.apiMovie,
         params: {
           query: `${store.getInput}`,
           include_adult: 'false',
           language: 'it-IT',
           page: '1',
-          api_key: '896cd3d890a13f2d39cda4cdd29b4ee1'
+          api_key: this.store.apiKey
         },
         headers: {
           accept: 'application/json',
@@ -41,13 +41,13 @@ export default {
 
       const options2 = {
         method: 'GET',
-        url: "https://api.themoviedb.org/3/search/movie?api_key=896cd3d890a13f2d39cda4cdd29b4ee1&query=",
+        url: this.store.apiSerie,
         params: {
           query: `${store.getInput}`,
           include_adult: 'false',
           language: 'it-IT',
           page: '1',
-          api_key: '896cd3d890a13f2d39cda4cdd29b4ee1'
+          api_key: this.store.apiKey
         },
         headers: {
           accept: 'application/json',
@@ -58,7 +58,6 @@ export default {
       axios
         .request(options)
         .then(function (response) {
-          console.log(response.data.results);
           store.movies = response.data.results;
         })
         .catch(function (error) {
@@ -68,7 +67,6 @@ export default {
       axios
         .request(options2)
         .then(function (response) {
-          console.log("serietv run" + response.data.results);
           store.serieTv = response.data.results;
         })
         .catch(function (error) {

@@ -5,7 +5,7 @@ export default {
         tv: Object
     },
     mounted() {
-        console.log(this.tv.original_name)
+
     }
 }
 </script>
@@ -14,8 +14,8 @@ export default {
 <template>
     <div class="singleCard">
 
-        <h3>Titolo: {{ tv.title }}</h3>
-        <h5>Titolo originale:{{ tv.original_title }}</h5>
+        <h3>Titolo: {{ tv.name }}</h3>
+        <h5>Titolo originale:{{ tv.original_name }}</h5>
         <h5>Lingua:{{ tv.original_language }}</h5>
         <img class="flag" :src="'/' + tv.original_language + '.png'">
         <h5>Voto: {{ tv.vote_average }}</h5>
