@@ -1,7 +1,7 @@
 <script>
 
 export default {
-    name: "AppCard",
+    name: "AppMovieCard",
     props: {
         movie: Object
     },

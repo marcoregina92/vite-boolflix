@@ -1,14 +1,14 @@
 <script>
 import axios from 'axios';
 import { store } from "./store.js"
-import AppMovie from "./components/AppMovie.vue"
-import AppCard from "./components/AppCard.vue"
+import AppSearch from "./components/AppSearch.vue"
+import AppMovieCard from "./components/AppMovieCard.vue"
 import AppSerieTv from "./components/AppSerieTv.vue"
 
 export default {
   components: {
-    AppMovie,
-    AppCard,
+    AppSearch,
+    AppMovieCard,
     AppSerieTv
 
   },
@@ -84,10 +84,10 @@ export default {
 <template>
   <h1>Film</h1>
 
-  <AppMovie @search="addTitles" />
+  <AppSearch @search="addTitles" />
 
   <div class="d-flex flex-wrap">
-    <AppCard v-for="movie in store.movies" :movie="movie" />
+    <AppMovieCard v-for="movie in store.movies" :movie="movie" />
   </div>
 
   <h2>Serie Tv</h2>
