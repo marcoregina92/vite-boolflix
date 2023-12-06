@@ -18,17 +18,20 @@ export default {
     },
 
     mounted() {
+        console.log(this.movie.original_language)
     }
 }
 </script>
 
 <template>
     <div class="singleCard">
-        <h3>Titolo: {{ movie.title }}</h3>
+        <img :src="this.store.poster + movie.poster_path" alt="">
+        <!-- <h3>Titolo: {{ movie.title }}</h3>
         <h5>Titolo originale:{{ movie.original_title }}</h5>
-        <h5>Lingua:{{ movie.original_language }}</h5>
-        <img class="flag" :src="'/' + movie.original_language + '.png'">
-        <h5>Voto: {{ movie.vote_average }}</h5>
+         <img v-if="store.flag.includes(movie.original_language)" :src="'/' + movie.original_language + '.png'" class="flag"
+         alt="">
+         <h5 v-else> {{ this.movie.original_language }} </h5>
+         <h5>Voto: {{ this.movie.vote_average }}</h5> -->
     </div>
 </template>
 
@@ -36,13 +39,15 @@ export default {
 .singleCard {
     width: calc(100% / 6 - 20px);
     background-color: teal;
-    border: 2px solid goldenrod;
     margin: 10px;
-    padding: 10px;
-
 }
 
 .flag {
-    width: 25px;
+    width: 30px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
 }
 </style>

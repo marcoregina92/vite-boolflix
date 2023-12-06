@@ -86,17 +86,24 @@ export default {
 
   <AppSearch @search="addTitles" />
 
-  <div class="d-flex flex-wrap">
+  <div class="boxCard">
     <AppMovie v-for="movie in store.movies" :movie="movie" />
   </div>
 
   <h2>Serie Tv</h2>
 
-  <div class="d-flex flex-wrap">
+  <div class="boxCard">
     <AppSerieTv v-for="serie in store.serieTv" :tv="serie" />
   </div>
 </template>
 
 
 
-<style scoped></style>
+<style scoped>
+.boxCard {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+</style>

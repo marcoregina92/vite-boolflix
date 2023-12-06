@@ -23,7 +23,7 @@ export default {
 
 <template>
     <div>
-        <input type="text" v-model="store.getInput">
+        <input @keyup.enter="searchMovie" type="text" v-model="store.getInput">
         <button @click="searchMovie">Cerca</button>
     </div>
 </template>
