@@ -82,9 +82,17 @@ export default {
 
 
 <template>
-  <h1>Film</h1>
+  <header class="d-flex justify-content-between align-items-center mt-2 p-4">
+    <div class="input">
+      <img src="../public/logo-boolflix.png" alt="">
+    </div>
 
-  <AppSearch @search="addTitles" />
+    <div>
+      <AppSearch @search="addTitles" />
+    </div>
+  </header>
+
+  <h2>Film</h2>
 
   <div class="boxCard">
     <AppMovie v-for="movie in store.movies" :movie="movie" />
@@ -105,5 +113,10 @@ export default {
   flex-wrap: wrap;
   width: 80%;
   margin: 0 auto;
+}
+
+
+h2 {
+  text-align: center;
 }
 </style>

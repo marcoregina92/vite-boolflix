@@ -32,8 +32,8 @@ export default {
                 </div>
 
                 <div class="flip-card-back">
-                    <h3>Titolo: {{ tv.title }}</h3>
-                    <h5>Titolo originale:{{ tv.original_title }}</h5>
+                    <h3>Titolo: {{ tv.name }}</h3>
+                    <h5>Titolo originale:{{ tv.original_name }}</h5>
                     <img v-if="store.flag.includes(tv.original_language)" :src="'/' + tv.original_language + '.png'"
                         class="flag" alt="">
                     <h5 v-else> {{ this.tv.original_language }} </h5>
